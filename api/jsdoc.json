@@ -1,0 +1,12 @@
+{
+  "source": {
+    "include": ["./src"],
+    "exclude": ["./node_modules", "src/components/**/*.test.js", "node_modules/|docs"],
+    "includePattern": ".+\\.js(doc|x)?$"
+  },
+  "plugins": [],
+  "opts": {
+    "recurse": true,
+    "destination": "docs"
+  }
+}
