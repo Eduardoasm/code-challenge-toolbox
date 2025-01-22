@@ -1,0 +1,26 @@
+{
+  "name": "code-challenge-toolbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run start:api\"",
+    "start:api": "cd api && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eduardoasm/code-challenge-toolbox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eduardoasm/code-challenge-toolbox/issues"
+  },
+  "homepage": "https://github.com/Eduardoasm/code-challenge-toolbox#readme",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "devDependencies": {}
+}
