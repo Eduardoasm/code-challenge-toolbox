@@ -8,7 +8,7 @@ describe('getSecretFiles', function () {
     sinon.restore()
   })
 
-  it('should throw an error if fetch is fails', async function () {
+  it('throw an error if fetch is fails', async function () {
     sinon.stub(fetch, 'Promise').returns(Promise.reject())
     try {
       await fileParserService.getSecretFiles()
@@ -17,7 +17,7 @@ describe('getSecretFiles', function () {
     }
   })
 
-  it('should return parsed JSON when fetch is successful', async function () {
+  it('return parsed JSON when fetch is successful', async function () {
     const fakeResponse = JSON.stringify(['file1.csv'])
     sinon.stub(fetch, 'Promise').returns(Promise.resolve({
       status: 200,
@@ -35,7 +35,7 @@ describe('downloadSecretFile', function () {
     sinon.restore()
   })
 
-  it('should return parsed JSON when fetch is successful', async function () {
+  it('return parsed JSON when fetch is successful', async function () {
     const fakeFileData = 'file,text,number,hex\nfile1,someText,1234,abcd1234abcd1234abcd1234abcd1234\n'
     sinon.stub(fetch, 'Promise').returns(Promise.resolve({
       status: 200,

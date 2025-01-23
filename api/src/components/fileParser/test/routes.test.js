@@ -11,7 +11,7 @@ afterEach(() => {
 })
 
 describe('GET /files/data', function () {
-  it('should fetch all files data and return status 200', function (done) {
+  it('fetch all files data and return status 200', function (done) {
     chai.request(server)
       .get('/files/data')
       .end(function (err, res) {
@@ -24,7 +24,7 @@ describe('GET /files/data', function () {
 })
 
 describe('GET /files/data?fileName=file', function () {
-  it('should fetch data and return status 200 with the correct fileName', function (done) {
+  it('fetch data and return status 200 with the correct fileName', function (done) {
     chai.request(server)
       .get('/files/data?fileName=test9.csv')
       .end(function (err, res) {
@@ -34,7 +34,7 @@ describe('GET /files/data?fileName=file', function () {
       })
   })
 
-  it('should return status 500 with the invalid fileName', function (done) {
+  it('return status 500 with the invalid fileName', function (done) {
     chai.request(server)
       .get('/files/data?fileName=test9.cs')
       .end(function (err, res) {

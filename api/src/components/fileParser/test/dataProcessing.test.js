@@ -8,7 +8,7 @@ describe('formatFiles', function () {
     sinon.restore()
   })
 
-  it('should format and return processed data', async function () {
+  it('format and return processed data', async function () {
     const fakeFileData = 'file,text,number,hex\nfile1.csv,someText,1234,abcd1234abcd1234abcd1234abcd1234\n'
     sinon.stub(fetch, 'Promise').returns(Promise.resolve({
       status: 200,
