@@ -31,7 +31,6 @@ async function getSecretFiles () {
       throw new Error('error status ')
     }
     const textResponse = await response.text()
-
     return JSON.parse(textResponse)
   } catch (error) {
     console.log('error', error)

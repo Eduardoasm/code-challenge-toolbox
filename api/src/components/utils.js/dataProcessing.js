@@ -51,7 +51,6 @@ function csvToObject (csv) {
       result.push(obj)
     }
   }
-
   return result
 }
 
