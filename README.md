@@ -45,16 +45,16 @@ docker-compose up
 Ubicado en el directorio api.
 
 Características
-Endpoints RESTful para procesamiento de archivos
-Arquitectura basada en componentes para escalabilidad
-Standard.js para estilo de código
-Mocha para pruebas
-Documentación JSDoc
+- Endpoints RESTful para procesamiento de archivos
+- Arquitectura basada en componentes para escalabilidad
+- Standard.js para estilo de código
+- Mocha para pruebas
+- Documentación JSDoc
 
 # Endpoints de API
-GET /files/data - Obtener todos los archivos procesados
-GET /files/data?fileName=<filename> - Obtener archivo específico
-GET /files/list - Obtener lista de archivos sin procesar de API externa
+- GET /files/data - Obtener todos los archivos procesados
+- GET /files/data?fileName=<filename> - Obtener archivo específico
+- GET /files/list - Obtener lista de archivos sin procesar de API externa
 
 # Pruebas
 ```bash
@@ -66,10 +66,10 @@ npm test
 Ubicado en el directorio client.
 
 Características
-Aplicación React con interfaz Bootstrap
-Redux para gestión de estado
-Suite de pruebas Jest
-Manejo de errores con notificaciones Toast
+- Aplicación React con interfaz Bootstrap
+- Redux para gestión de estado
+- Suite de pruebas Jest
+- Manejo de errores con notificaciones Toast
 
 Pruebas
 ```bash
@@ -78,44 +78,44 @@ npm test
 ```
 
 Stack Tecnológico
--Backend
--Node.js
--Express
--Standard.js
--Mocha
--Docker
--jsdoc
+Backend
+- Node.js
+- Express
+- Standard.js
+- Mocha
+- Docker
+- jsdoc
 
--Frontend
--React
--Redux
--Bootstrap
--Jest
--Docker
+Frontend
+- React
+- Redux
+- Bootstrap
+- Jest
+- Docker
 
 ## Configuración Docker
 Tres configuraciones de Dockerfile:
 
-Dockerfile - Configuración servicio API
-Dockerfile - Configuración servicio Cliente
-docker-compose.yml - Orquestación de servicios
+- Dockerfile - Configuración servicio API
+- Dockerfile - Configuración servicio Cliente
+- docker-compose.yml - Orquestación de servicios
 
 # Scripts Disponibles
 
 Directorio raíz:
 
-npm run start - Iniciar ambos servicios
-npm run start:api - Iniciar servicio API
-npm run start:client - Iniciar servicio Cliente
+- npm run start - Iniciar ambos servicios
+- npm run start:api - Iniciar servicio API
+- npm run start:client - Iniciar servicio Cliente
 
 # Directorio API:
 
-npm test - Ejecutar pruebas API
-npm start - Iniciar servicio API
-npm run docs - Generar documentación API
+- npm test - Ejecutar pruebas API
+- npm start - Iniciar servicio API
+- npm run docs - Generar documentación API
 
 # Directorio Cliente:
 
-npm test - Ejecutar pruebas cliente
-npm start - Iniciar servicio cliente
-npm run build - Construir versión de producción
+- npm test - Ejecutar pruebas cliente
+- npm start - Iniciar servicio cliente
+- npm run build - Construir versión de producción
