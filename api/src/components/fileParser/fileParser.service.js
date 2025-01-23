@@ -13,6 +13,9 @@ import fetch from 'node-fetch'
  * @returns {Promise<Object>} A promise that resolves to an object containing the list of secret files.
  * @throws {Error} log an error if the fetch operation fails or if there is an issue parsing the response.
  */
+
+const SECRET_FILES_URL = 'https://echo-serv.tbxnet.com/v1'
+
 async function getSecretFiles () {
   try {
     const options = {
@@ -23,7 +26,7 @@ async function getSecretFiles () {
       }
     }
 
-    const response = await fetch('https://echo-serv.tbxnet.com/v1/secret/files', options)
+    const response = await fetch(`${SECRET_FILES_URL}/secret/files`, options)
     if (response.status !== 200) {
       throw new Error('error status ')
     }
@@ -54,7 +57,7 @@ async function downloadSecretFile (file) {
       }
     }
 
-    const response = await fetch(`https://echo-serv.tbxnet.com/v1/secret/file/${file}`, options)
+    const response = await fetch(`${SECRET_FILES_URL}/secret/file/${file}`, options)
 
     if (response.status !== 200) {
       console.log('error')

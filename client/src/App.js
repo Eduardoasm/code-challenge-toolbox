@@ -1,8 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import React from 'react';
 import NavBar from './components/NavBar';
 import FilesTable from './components/FilesTable';
-import React from 'react';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [search, setSearch] = React.useState("")

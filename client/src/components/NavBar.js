@@ -1,6 +1,6 @@
 import React from 'react';
-import { fetchSecretFileByQuery } from '../redux/actions-files';
 import { useDispatch } from 'react-redux'
+import { fetchSecretFiles } from '../redux/actions-files';
 import { Toast } from 'bootstrap/dist/js/bootstrap.bundle.min';
 
 export function NavBar({ setSearch, search }) {
@@ -13,7 +13,7 @@ export function NavBar({ setSearch, search }) {
 const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await dispatch(fetchSecretFileByQuery(search));
+      await dispatch(fetchSecretFiles({ fileName: search }));
     } catch (error) {
       showToast('Invalid file name');
     }
@@ -52,7 +52,7 @@ const handleSubmit = async (event) => {
       </div>
       <div className="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="errorToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
-          <div className="toast-header">
+          <div className="toast-header bg-danger text-white">
             <strong className="me-auto">Error</strong>
             <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
           </div>

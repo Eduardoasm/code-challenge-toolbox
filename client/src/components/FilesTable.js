@@ -1,6 +1,8 @@
 import React from 'react';
-import { fetchSecretFiles } from '../redux/actions-files';
 import { useDispatch, useSelector } from 'react-redux'
+import { fetchSecretFiles } from '../redux/actions-files';
+import { TableHeaders } from './table/TableHeaders';
+import { TableRows } from './table/TableRows';
 
 export function FilesTable() {
   const dispatch = useDispatch();
@@ -33,27 +35,8 @@ export function FilesTable() {
       ? 
       <div className="p-5 d-flex align-items-center justify-content-center">
         <table className="table table-striped w-75 table-bordered">
-          <thead style={{ borderBottomWidth: '3px', borderBottomColor: '#343a40', borderBottomStyle: 'solid' }}>
-            <tr>
-              {
-                fileHeaders.map((header, index) => (
-                  <th scope="col" style={{ padding: '15px 10px' }} key={`${header}-${index}`}>{header}</th>
-                ))
-              }
-            </tr>
-          </thead>
-          <tbody> 
-            {
-              transformedData.map((file) =>  (
-                <tr key={file.text}>
-                  <td>{file.file}</td>
-                  <td>{file.text}</td>
-                  <td>{file.number}</td>
-                  <td>{file.hex}</td>
-                </tr>
-              ))
-            }
-          </tbody>
+          <TableHeaders headers={fileHeaders} />
+          <TableRows data={transformedData} />
         </table>
       </div>
       :

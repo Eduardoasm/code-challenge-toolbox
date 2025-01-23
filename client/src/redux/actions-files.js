@@ -1,31 +1,25 @@
 import axios from 'axios';
 
 export const FETCH_SECRET_FILES = 'FETCH_SECRET_FILES';
+const baseURL = 'http://localhost:5000';
 
-export function fetchSecretFiles(){
-  return async function(dispatch){
-    try{
-      let { data } = await axios.get('http://localhost:5000/files/data')
-      dispatch(
-        {
-          type: FETCH_SECRET_FILES,
-          payload: data
-        })
-    }catch(error){
-      console.log({error})
-      throw new Error("error", error)        
-}}}
+export function fetchSecretFiles(queryParams = {}) {
+  return async function (dispatch) {
+    try {
+      const url = new URL('/files/data', baseURL);
+      Object.entries(queryParams).forEach(([key, value]) => {
+        url.searchParams.append(key, value);
+      });
 
-export function fetchSecretFileByQuery(fileName){
-  return async function(dispatch){
-    try{
-      let { data } = await axios.get(`http://localhost:5000/files/data?fileName=${fileName}`)
-      dispatch(
-        {
-          type: FETCH_SECRET_FILES,
-          payload: data
-        })
-    }catch(error){
-      console.log({error})
-      throw new Error("error", error)
-}}}
+      const { data } = await axios.get(url.toString());
+
+      dispatch({
+        type: FETCH_SECRET_FILES,
+        payload: data,
+      });
+    } catch (error) {
+      console.error('Error fetching secret files:', error);
+      throw error;
+    }
+  };
+}

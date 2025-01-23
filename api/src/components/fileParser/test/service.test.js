@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import sinon from 'sinon'
 import fetch from 'node-fetch'
-import { fileParserService } from '../fileParser/fileParser.service.js'
+import { fileParserService } from '../fileParser.service.js'
 
 describe('getSecretFiles', function () {
   afterEach(function () {
