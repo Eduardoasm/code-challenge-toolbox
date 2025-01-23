@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { Provider, useDispatch } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import NavBar from './navBar';
+import NavBar from './NavBar';
 import { fetchSecretFileByQuery } from '../redux/actions-files';
 
 const middlewares = [thunk];

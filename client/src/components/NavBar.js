@@ -31,7 +31,7 @@ const handleSubmit = async (event) => {
       <div>
         <nav className="navbar navbar-danger bg-danger ml-1">
         <span className="navbar-brand text-white" style={{ fontWeight: '700', marginLeft: '10px' }}>React Test App</span>
-        <form className="form-inline d-flex">
+        <form className="form-inline d-flex" onSubmit={handleSubmit}>
           <input
             className="form-control"
             type="search"
@@ -44,7 +44,6 @@ const handleSubmit = async (event) => {
             className="btn btn-success my-2 my-sm-0"
             type="submit"
             style={{ marginRight: '30px', background: '#f8f9fa', color: '#000000' }}
-            onSubmit={handleSubmit}
             >
               Search
             </button>
