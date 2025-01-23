@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run start:api\"",
-    "start:api": "cd api && npm start"
+    "start": "concurrently \"npm run start:api\" \"npm run start:client\"",
+    "start:api": "cd api && npm start",
+    "start:client": "cd client && npm start"
   },
   "repository": {
     "type": "git",
