@@ -92,6 +92,7 @@ Frontend
 - Bootstrap
 - Jest
 - Docker
+- Webpack (Incluido directamente desde React, viene configurado con los react-scripts)
 
 ## Configuración Docker
 Tres configuraciones de Dockerfile:
