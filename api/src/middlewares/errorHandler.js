@@ -1,5 +1,7 @@
-export function notFoundHandler (req, res, next) {
-  const error = new Error(`${req.method} ${req.originalUrl} not found`)
-  error.status = 404
-  next(error)
+export function errorHandler (error, req, res, next) {
+  error.status = error.status || 500
+  res.status(error.status).json({
+    success: false,
+    message: error.message
+  })
 }

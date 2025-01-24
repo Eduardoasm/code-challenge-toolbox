@@ -9,7 +9,7 @@ import { formatFiles } from '../utils.js/dataProcessing.js'
  * @param {Object} res - The response object to send the data back to the client.
  * @returns {Promise<void>} Returns a JSON response with the formatted data or an error message.
  */
-export async function secretFiles (req, res) {
+export async function secretFiles (req, res, next) {
   const { fileName } = req.query
   try {
     if (fileName) {
@@ -26,12 +26,11 @@ export async function secretFiles (req, res) {
       return res.status(200).json(data)
     }
   } catch (error) {
-    console.log(error)
-    return res.status(500).json({ success: false, message: 'Internal server error' })
+    next(error)
   }
 }
 
-export async function unFormattedSecretFiles (req, res) {
+export async function unFormattedSecretFiles (req, res, next) {
   try {
     const { files } = await fileParserService.getSecretFiles()
     let concatenatedData = ''
@@ -51,7 +50,6 @@ export async function unFormattedSecretFiles (req, res) {
     res.header('Content-Type', 'text/csv')
     return res.send(concatenatedData)
   } catch (error) {
-    console.log(error)
-    return res.status(500).json({ success: false, message: 'Internal server error' })
+    next(error)
   }
 }

@@ -1,7 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 import fileRouter from './components/fileParser/fileParser.routes.js'
-import { notFoundHandler } from './middlewares/errorHandler.js'
+import { errorHandler } from './middlewares/errorHandler.js'
+import { notFoundHandler } from './middlewares/notFoundHandler.js'
 
 const app = express()
 
@@ -15,6 +16,7 @@ app.use('/files', fileRouter)
 
 // error handlers
 app.use(notFoundHandler)
+app.use(errorHandler)
 
 app.listen(PORT, () => {
   console.log(`servidor corriendo en el puerto = ${PORT}`)
