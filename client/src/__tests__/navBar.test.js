@@ -49,7 +49,7 @@ describe('NavBar', () => {
       </Provider>
     );
 
-    fireEvent.change(screen.getByPlaceholderText('Search'), {
+    fireEvent.change(screen.getByPlaceholderText('test1.csv'), {
       target: { value: search },
     });
 
