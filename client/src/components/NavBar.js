@@ -35,7 +35,7 @@ const handleSubmit = async (event) => {
           <input
             className="form-control"
             type="search"
-            placeholder="Search"
+            placeholder="test1.csv"
             aria-label="Search"
             style={{ marginRight: '10px', outline: 'none', border: '2px solid transparent' }}
             onChange={handleInputChange}
